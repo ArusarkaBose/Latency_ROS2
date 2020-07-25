@@ -1,0 +1,5 @@
+sensor_msgs/Image query_image
+builtin_interfaces/Time query_time
+---
+sensor_msgs/Image return_image
+builtin_interfaces/Time return_time
