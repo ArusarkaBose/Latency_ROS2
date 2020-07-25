@@ -10,7 +10,7 @@ Measure local environment or server delays with the help of Latency tests.
 
 ## Latency Checker for String Messages :
 ### Server-Client Setup :
-Run **devel_space/devel_space/latencycheckserver.py** followed by **devel_space/devel_space/latencycheckclient.py**
+Run `devel_space/devel_space/latencycheckserver.py` followed by `devel_space/devel_space/latencycheckclient.py`
 
 ---
 #### Algorithm:
