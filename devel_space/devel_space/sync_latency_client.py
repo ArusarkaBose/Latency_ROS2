@@ -67,15 +67,22 @@ def main():
     x=np.arange(1,len(y)+1,1)
     yerr=[np.std(latencies) for latencies in latency_bursts]
 
-    with open('/home/arusarka/catkin_ws/src/Latency_ROS/src/latency_ROS1.json') as f:
-        latency_ROS1=json.load(f)
-    y_ros1=latency_ROS1["y"]
-    x_ros1=latency_ROS1["x"]
-    yerr_ros1=latency_ROS1["yerr"]
+"""
+    In order to plot both ROS2 and ROS1 latencies on the same plot, uncomment the below lines.
+    Change the file open path as per your json file location.
+"""
+
+
+
+    # with open('/home/arusarka/catkin_ws/src/Latency_ROS/src/latency_ROS1.json') as f:
+    #     latency_ROS1=json.load(f)
+    # y_ros1=latency_ROS1["y"]
+    # x_ros1=latency_ROS1["x"]
+    # yerr_ros1=latency_ROS1["yerr"]
 
     ax=plt.subplot()
 
-    ax.errorbar(x_ros1,y_ros1,yerr_ros1,label='ROS1')
+    # ax.errorbar(x_ros1,y_ros1,yerr_ros1,label='ROS1')      #Uncomment for both plots on the same graph
 
     ax.errorbar(x,y,yerr,label='ROS2')
     ax.set(xlabel='Query Number (at 5 sec intervals)',ylabel='Latency (in ms) ',title='Latency Plot')
