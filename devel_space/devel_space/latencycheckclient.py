@@ -32,16 +32,15 @@ def main():
             latency/=10**6
             latencies.append(latency)
             print("Latency obtained = ",latency)
+
         except Exception as e:
             node.get_logger().info('Service call failed %r' % (e,))
         
-            
-
     node.destroy_node()
     rclpy.shutdown()
 
-    mean=sum(latencies[1:])/len(latencies[1:])
-    standard_dev=sum([((x - mean) ** 2) for x in latencies[1:]]) / len(latencies[1:])    
+    mean=np.sum(latencies[1:])
+    standard_dev=np.std(latencies[1:])    
 
     print("Mean = ",mean)
     print("Error Bar = ",mean+standard_dev)
@@ -52,8 +51,6 @@ def main():
     ax.set(xlabel='Query Number',ylabel='Latency (in ms) ',title='Latency Plot')
     plt.xticks(np.arange(0, len(latencies)+1, len(latencies)/20))
     ax.grid()
-
-    pl.dump(fig_handle, open('ros2_latency.pickle','wb'), protocol=2)
 
     plt.show()
 
