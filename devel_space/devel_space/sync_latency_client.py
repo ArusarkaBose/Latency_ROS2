@@ -67,10 +67,10 @@ def main():
     x=np.arange(1,len(y)+1,1)
     yerr=[np.std(latencies) for latencies in latency_bursts]
 
-"""
+    """
     In order to plot both ROS2 and ROS1 latencies on the same plot, uncomment the below lines.
     Change the file open path as per your json file location.
-"""
+    """
 
 
 
