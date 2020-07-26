@@ -10,7 +10,12 @@ Measure local environment or server delays with the help of Latency tests.
 
 ## Latency Checker for String Messages :
 ### Server-Client Setup :
-Run `devel_space/devel_space/latencycheckserver.py` followed by `devel_space/devel_space/latencycheckclient.py`
+For **synchronous** client (recommended):
+* Run `devel_space/devel_space/latencycheckserver.py` followed by `devel_space/devel_space/sync_latency_client.py` </br>
+
+For **asynchronous** client:
+* Run `devel_space/devel_space/latencycheckserver.py` followed by `devel_space/devel_space/latencycheckclient.py`
+
 
 ---
 #### Algorithm:
@@ -23,3 +28,8 @@ Run `devel_space/devel_space/latencycheckserver.py` followed by `devel_space/dev
 4. The **client** node measures the difference between its `rostime` at the instant of receipt of the **server** `response` and the `rostime` returned as `response` by the **server** (which is equal to the `rostime` of the **client** at the instant of sending the `service request`)
 
 ---
+
+</br>
+
+#### Note:
+In order to plot both [ROS1](https://github.com/ArusarkaBose/Latency_ROS) and ROS2 latency graphs on a single plot, follow instructions in `sync_latency_client.py`
