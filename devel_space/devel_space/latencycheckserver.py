@@ -9,6 +9,7 @@ g_node = None
 def Handle_time(request,response):
     global g_node
     response.return_time=request.query_time
+    response.return_load=request.query_load
     print("Incoming request ",request.query_time)
     return response
 
